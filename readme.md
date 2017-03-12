@@ -3,12 +3,18 @@
 Hack [Mbview](https://github.com/mapbox/mbview)
 
 
+
 ###  Install
+
+```
+npm install ipv4sec/mbview-node -g
+```
+
+###  Develop
 
 ```
 git clone https://github.com/ipv4sec/mbview.git
 npm install
-tsc *.ts
 npm link
 ```
 
