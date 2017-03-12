@@ -1,0 +1,24 @@
+{
+  "name": "mbview-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "mbview-node": "./index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.1",
+    "mbview": "^1.9.0",
+    "typescript": "^2.2.1"
+  },
+  "devDependencies": {
+    "@types/core-js": "^0.9.37",
+    "@types/node": "^7.0.8"
+  }
+}
