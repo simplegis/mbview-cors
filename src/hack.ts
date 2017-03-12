@@ -1,16 +1,14 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var fs = require('fs');
-var express = require('express');
-var app = express();
-var cors = require('cors');
-var Mbview = require("../node_modules/mbview/mbview");
-exports.Mbview = Mbview;
-var utils = require("../node_modules/mbview/utils");
-exports.utils = utils;
+
+let fs   = require('fs');
+let express = require('express');
+let app = express();
+let cors   = require('cors');
+let Mbview = require("../node_modules/mbview/mbview");
+let utils = require("../node_modules/mbview/utils");
 app.use(cors());
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
+
 utils.usage = function () {
     var u = [];
     u.push('');
@@ -28,24 +26,29 @@ utils.usage = function () {
     u.push('');
     return u.join('\n');
 };
-Mbview.listen = function (config, onListen) {
+
+Mbview.listen =  function (config, onListen) {
     app.get('/', function (req, res) {
         res.render('map', config);
     });
-    app.get('/' + config.prefix + '/:source/:z/:x/:y.pbf', function (req, res) {
+
+    app.get('/'+config.prefix+'/:source/:z/:x/:y.pbf', function (req, res) {
         var p = req.params;
+
         var tiles = config.sources[p.source].tiles;
         tiles.getTile(p.z, p.x, p.y, function (err, tile, headers) {
             if (err) {
                 res.end();
-            }
-            else {
+            } else {
                 res.writeHead(200, headers);
                 res.end(tile);
             }
         });
     });
+
     config.server = app.listen(config.port, function () {
         onListen(null, config);
     });
-};
+}
+
+export {utils ,Mbview}
