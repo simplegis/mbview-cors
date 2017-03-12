@@ -8,7 +8,7 @@ Hack [Mbview](https://github.com/mapbox/mbview)
 ```
 git clone https://github.com/ipv4sec/mbview.git
 npm install
-tsc **/*.ts
+tsc *.ts
 npm link
 ```
 
