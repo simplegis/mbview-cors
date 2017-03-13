@@ -1,19 +1,19 @@
-## mbview-node
+## mbview-cors
 
-Hack [Mbview](https://github.com/mapbox/mbview)
+Hack [mbview](https://github.com/mapbox/mbview)
 
 
 
 ###  Install
 
 ```
-npm install ipv4sec/mbview-node -g
+npm install ipv4sec/mbview-cors -g
 ```
 
 ###  Develop
 
 ```
-git clone https://github.com/ipv4sec/mbview.git
+git clone https://github.com/ipv4sec/mbview-cors.git
 npm install
 npm link
 ```
@@ -21,7 +21,7 @@ npm link
 ### Use
 
 ```
-usage: mbview-node [options] [files]
+usage: mbview-cors [options] [files]
 
  --port sets port to use (default: 3000)
  --quiet or -q supress all logging except the address to visit
@@ -36,8 +36,19 @@ usage: mbview-node [options] [files]
 ### Example
 
 ```
-mbview-node q.mbtiles --port 8080 -n --basemap "dark" --url "localhost" --prefix "api"
+mbview-cors q.mbtiles --port 8080 -n --basemap "dark" --url "localhost" --prefix "api"
 ```
+
+Example URL:
+```
+http://localhost:8080/api/q.mbtiles/{z}/{x}/{y}.pbf
+```
+
+Default URL:
+```
+http://127.0.0.1:3000//{dataSource}/{z}/{x}/{y}.pbf
+```
+
 
 
 
