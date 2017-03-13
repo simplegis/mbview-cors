@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var hack_1 = require("./hack");
 var argv = require('minimist')(process.argv.slice(2));
 var open = require('open');
