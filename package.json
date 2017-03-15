@@ -8,7 +8,7 @@
     "build":"tsc"
   },
   "bin": {
-    "mbview-node": "dist/index.js"
+    "mbview-cors": "dist/index.js"
   },
   "keywords": [],
   "author": "",
